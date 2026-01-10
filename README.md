@@ -143,6 +143,37 @@ This loop—request, offer, vote, pay—keeps the ecosystem humming, with clear 
 
 ---
 
+## Prototype Path
+
+Start signaling and earning. Here's how to get hands-on with Stream Protocol:
+
+### Tier 1: Post a Request (No Code)
+Open any Nostr client that supports custom kinds (e.g., [Coracle](https://coracle.social)) and post a `kind:42069` event with these tags:
+```json
+["event_type", "request"], ["work_type", "testing"], ["rate", "1 sat per bug"]
+```
+You've just broadcast a decentralized work request. Anyone watching can respond.
+
+### Tier 2: Build a Bot
+Create a simple script that:
+- Watches for `kind:42069` events with `["event_type", "request"]`
+- Performs the work (e.g., matchmaking, content generation)
+- Posts an `offer` event with proof and a Lightning invoice
+
+### Tier 3: Add Reputation
+- Implement `vibe_vote` handling to track bot reputation
+- Add filtering: only respond to requests that match your vibe score
+- Now you're part of a decentralized labor market
+
+## Related Standards
+
+Stream Protocol is part of the [Decentralized Game Standard](../../.github/profile/README.md) ecosystem:
+
+| Standard | How It Relates |
+|----------|----------------|
+| [AEMS](../aems-standard/README.md) | Stream can incentivize AEMS entity creation and curation |
+| [Forge-Engine](../forge-engine/README.md) | Processors can emit/consume Stream events for distributed work |
+
 ## Contributing
 
 Stream Protocol is a living standard. Want to add new sub-events, tweak work types, or improve it? Fork it, hack it, or drop issues/PRs on GitHub. Keep it simple, DRY, and decentralized—that’s the vibe.
