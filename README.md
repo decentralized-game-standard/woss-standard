@@ -36,6 +36,20 @@ Jeff Booth extends this to technology's deflationary force: innovation drives co
 
 WOSS operationalizes this for gaming. Lightning makes offering 100 sats for a bug fix or 100,000 sats for a tournament prize as easy as cash in a park game. Nostr broadcasts signals globally without permission.
 
+## What WOSS Deliberately Excludes
+
+WOSS is a coordination language, not a marketplace platform. Like HTTP defines request-response without mandating content, WOSS defines offer-fulfill-ack without mandating commerce:
+
+| Excluded | Why | Where It Belongs |
+|----------|-----|------------------|
+| **Escrow/custody** | Protocol signals intent, not holds funds | Third-party escrow services |
+| **Reputation systems** | Protocol records history, not scores | Aggregators, community curation |
+| **Dispute resolution** | Protocol enables exit, not arbitration | Voluntary mediation services |
+| **Discovery/matching** | Protocol broadcasts, not recommends | Index services, clients |
+| **Compliance/KYC** | Protocol is neutral, not jurisdictional | Service providers, users |
+
+WOSS enables markets without being a market. Every feature excluded is a business opportunity for third parties—funded, naturally, via WOSS itself.
+
 ## Technical Specification: Three Primitives
 
 WOSS uses standard Nostr kinds for radical minimalism.
