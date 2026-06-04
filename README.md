@@ -1,4 +1,4 @@
-# WOCS: Work Order Coordination Settlement
+# WOCS: Work Offered, Claimed, Settled
 
 **A Minimal Protocol for Decentralized Coordination in Games — Conceptual**
 
