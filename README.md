@@ -77,17 +77,19 @@ Every exclusion preserves optionality and prevents capture. Escrow creates a cus
 
 ## Technical Specification: Three Primitives
 
-WOCS uses standard Nostr kinds.
+WOCS defines three dedicated Nostr event kinds, one per primitive.
+
+> **Note**: The concrete kind numbers are deliberately not yet assigned. Allocations are deferred until they are formalized against real relay usage; until then, examples use named placeholders such as `"<WOCS OFFER kind>"`.
 
 A community wants low-latency server hosting for their game. They broadcast an OFFER:
 
-### 1. OFFER (kind 32001)
+### 1. OFFER
 
 Broadcast a need with committed settlement amount.
 
 ```json
 {
-  "kind": 32001,
+  "kind": "<WOCS OFFER kind>",
   "tags": [
     ["d", "<unique-id>"],
     ["sats", "50000"],
@@ -103,13 +105,13 @@ Mandatory: `d` (addressable), `sats`. Optional tags for filtering and context. T
 
 A server operator in Osaka sees the offer and responds:
 
-### 2. FULFILL (kind 32002)
+### 2. FULFILL
 
 Claim delivery with proof and a Lightning invoice.
 
 ```json
 {
-  "kind": 32002,
+  "kind": "<WOCS FULFILL kind>",
   "tags": [
     ["d", "<fulfill-id>"],
     ["e", "<offer-event-id>", "", "offer"],
@@ -124,13 +126,13 @@ Mandatory: reference to offer, invoice. The proof tag is intentionally unstructu
 
 The community verifies the server is running and pays:
 
-### 3. ACK (kind 32003)
+### 3. ACK
 
 Acknowledge settlement.
 
 ```json
 {
-  "kind": 32003,
+  "kind": "<WOCS ACK kind>",
   "tags": [
     ["d", "<ack-id>"],
     ["e", "<fulfill-event-id>", "", "fulfill"],
