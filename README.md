@@ -6,14 +6,9 @@
 
 ---
 
-> **Status**: Conceptual. WOCS is the most speculative layer of EGS and the only one
-> with a Lightning (and therefore Bitcoin) dependency. No event kind numbers are
-> pinned, and no live Offer→Fulfill→Ack cycle has settled real work yet. Nothing else
-> in EGS depends on WOCS: adopting or ignoring it changes nothing about AEMS, RUNS, or
-> MAPS. Unlike RUNS (Linux), AEMS (the chess Knight), or MAPS (staff notation), WOCS
-> has no proven historical precedent for what it attempts — a protocol-native
-> infrastructure-funding layer — and that absence is stated rather than papered over.
-> Ecosystem-wide state:
+> **Status**: Conceptual — the most speculative EGS layer, and the only one that
+> depends on Lightning. No kind numbers are pinned; no Offer→Fulfill→Ack cycle has
+> settled real work. Nothing else in EGS depends on WOCS. Ecosystem-wide state:
 > [STATUS.md](https://github.com/enduring-game-standard/.github/blob/main/profile/STATUS.md).
 
 ## Why Coordination Needs a Protocol
